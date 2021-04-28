@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="html"></div>
+  <div id="wrapper">
+    <div id="picture"></div>
+  </div>
+
+  <style id="style"></style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    *::after {
+      box-sizing: border-box;
+    }
+
+    *::before {
+      box-sizing: border-box;
+    }
+
+
+    #html {
+      position: relative;
+      word-break: break-all;
+    }
+
+    #picture {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #picture::after {
+      content: '';
+      position: absolute;
+    }
+
+    #picture::before {
+      content: '';
+      position: absolute;
+    }
+
+    @media (max-width: 500px) {
+      #html {
+        height: 50vh;
+        overflow: auto;
+      }
+
+      #wrapper {
+        height: 50vh;
+      }
+
+      #picture {
+        position: relative;
+        top: 100px;
+        right: 0;
+      }
+    }
+  </style>
+  <script src="main.js"></script>
+</body>
+
+</html>
