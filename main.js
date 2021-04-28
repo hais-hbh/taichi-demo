@@ -58,8 +58,8 @@ let step = function () {
     }
     html.innerHTML = string2
     style.innerHTML = string.substring(0, n)
-    window.scrollTo(0, 9999)
-    html.scrollTo(0, 9999)
+    window.scrollTo(0, 999)
+    html.scrollTo(0, 999)
   }, 0)
 }
 step()
