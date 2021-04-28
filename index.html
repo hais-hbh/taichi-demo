@@ -10,10 +10,7 @@
 
 <body>
   <div id="html"></div>
-  <div id="wrapper">
-    <div id="picture"></div>
-  </div>
-
+  <div id="taichi"></div>
   <style id="style"></style>
   <style>
     * {
@@ -30,42 +27,34 @@
       box-sizing: border-box;
     }
 
-
-    #html {
-      position: relative;
-      word-break: break-all;
-    }
-
-    #picture {
+    #taichi {
       position: fixed;
       top: 0;
       left: 50%;
       transform: translateX(-50%);
     }
 
-    #picture::after {
+    #taichi::before {
       content: '';
+      display: block;
       position: absolute;
     }
 
-    #picture::before {
+    #taichi::after {
       content: '';
+      display: block;
       position: absolute;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width:500px) {
       #html {
         height: 50vh;
         overflow: auto;
       }
 
-      #wrapper {
-        height: 50vh;
-      }
-
-      #picture {
+      #taichi {
         position: relative;
-        top: 100px;
+        top: 75px;
         right: 0;
       }
     }

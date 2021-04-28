@@ -1,76 +1,65 @@
-let demo = document.querySelector('#html')
-let style = document.querySelector('style')
-
-let string = `
-/*你好，我是一名前端新人
-*接下来我要展示以下我的前端功底了
-*首先我们先准备一个div
+let html = document.querySelector('#html')
+let style = document.querySelector('#style')
+let string = `/*你好，我现在是一个前端小白
+*现在我想展现一下我自己的前端功底
+*首先我们先写个圆
 */
-#picture{
-  border:1px solid red;
-  width:200px;
-  height:200px;
-}
-/*接下来把div变成一个八卦图
-*注意看好了
-*首先把div变成一个圆
-*/
-#picture{
+#taichi {
+  width: 200px;
+  height: 200px;
+  border: 1px solid red;
   border-radius:50%;
-  box-shadow:0 0 3px rgba(0,0,0,0.5);
-  border:none;
 }
-/*众所周知，八卦是分阴阳的
-*所以是一黑一白
+/*众所周知，太极是分阴阳的
+*所以现在我们将它分为阴阳两极
 */
-#picture{
+#taichi{
+  border:none;
+  box-shadow: 0 0 3px rgba(0,0,0,0.5);
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
 }
-/*之后我们再平分一下太极的阴阳两极
-*/
-#picture::before{
+/*之后我们加上太极的阴中阳和阳中阴*/
+#taichi::before{
   width:100px;
   height:100px;
+  background:#fff;
   top:0;
   left:50%;
   transform:translateX(-50%);
-  background:#fff;
   border-radius:50%;
   background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%);
 }
-#picture::after{
+#taichi::after{
   width:100px;
   height:100px;
+  background:#000;
   bottom:0;
   left:50%;
   transform:translateX(-50%);
-  background:#000;
   border-radius:50%;
   background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%, rgba(0,0,0,1) 100%);
 }
 `
 let string2 = ''
-let n = 0
+let n = -1
 
 let step = function () {
+  n = n + 1
   setTimeout(function () {
-
     if (string[n] === '\n') {
       string2 += '</br>'
-    } else if (string[n] === ' ') {
+    }
+    if (string[n] === ' ') {
       string2 += '&nbsp'
     }
-    else {
+    if (n < string.length) {
       string2 += string[n]
-    }
-    demo.innerHTML = string2
-    style.innerHTML = string.substring(0, n)
-    window.scrollTo(0, 99999);
-    html.scrollTo(0, 99999);
-    if (n + 1 < string.length) {
-      n += 1
       step()
     }
+    html.innerHTML = string2
+    style.innerHTML = string.substring(0, n)
+    window.scrollTo(0, 9999)
+    html.scrollTo(0, 9999)
   }, 0)
 }
 step()
