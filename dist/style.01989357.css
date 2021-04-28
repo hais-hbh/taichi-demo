@@ -1,0 +1,1 @@
+*{margin:0;padding:0}*,:after,:before{box-sizing:border-box}#html{word-break:break-all}#taichi{position:fixed;top:0;left:50%;transform:translateX(-50%)}#taichi:after,#taichi:before{content:"";display:block;position:absolute}@media (max-width:500px){#html{height:50vh;overflow:auto}#taichi{position:relative;top:75px;right:0}}
